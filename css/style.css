@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik' !important;
+    /* background-color: #FFF9F0 !important; */
+}
+
+.test1 {
+    border: 1px solid red;
+}
+
+.test2 {
+    border: 3px solid green;
+}
+
+.color_1 {
+    background-color: #24183E;
+}
+
+
+/********************** Navbar CSS Start **********************/
+.nav_logo {
+    width: 33%;
+}
+
+.nav_logo img {
+    width: 15%;
+}
+
+/********************** Navbar CSS End **********************/
+/********************** Registration Page CSS Start **********************/
+.back_btn {
+    width: 75%;
+    padding: 5px 5px;
+    border-radius: 12px;
+}
+
+.registration_container {
+    height: 80vh;
+}
+
+.registration_row {
+    border: 1.5px solid #70707042;
+    height: 67vh;
+}
+
+/********************** Registration Page CSS End **********************/
+/********************** Login Model Page CSS Start **********************/
+.model_img {
+    width: 12%;
+}
+
+.modal_social_btn {
+    width: 75%;
+}
+
+/********************** Login Model Page CSS End **********************/
+/********************** Criteria Page CSS Start **********************/
+.criteria_nav_logo {
+    width: 33%;
+}
+
+.criteria_nav_logo img {
+    width: 15%;
+}
+
+.navprofile_pic {
+    width: 33%;
+}
+
+.navprofile_pic a img {
+    width: 12%;
+}
+
+.criteriaback_btn {
+    width: 7%;
+    padding: 5px 5px;
+    border-radius: 12px;
+}
+
+.search-container {
+    width: 65%;
+}
+
+.search-container input[type=text] {
+    width: 88%;
+}
+
+.search-container button {
+    width: 12%;
+}
+
+.criteria_container {
+    height: 105vh;
+}
+
+.criteria_row {
+    border: 1.5px solid #70707042;
+    height: 93vh;
+}
+
+/********************** Criteria Page CSS End **********************/
+/********************** Pump-Catalog Page CSS Start **********************/
+.dataTables_wrapper .dataTables_filter {
+    display: none;
+}
+
+/* .dataTables_wrapper .dataTables_length {
+    display: none;
+} */
+
+/* .dataTables_wrapper .dataTables_info {
+    display: none;
+} */
+#myTable {
+    width: 100%;
+}
+#myTable thead th {
+    background-color: #F8F7F8;
+}
+#myTable thead {
+    border: 0.5px solid #ECEBEC;
+    font-size: 13px;
+}
+#myTable tbody {
+    font-size: 13px;
+}
+#myTable_wrapper {
+    position: relative;
+}
+
+.custom-scrollbar {
+    max-height: 350px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #CFCFCF;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #DCDCDC;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #DCDCDC;
+}
+
+
+
+/********************** Pump-Catalog Page CSS End **********************/
+
+
+/* ========================================
+|              Media Queries              |
+==========================================*/
+
+
+/* For Desktop View */
+
+@media (max-width: 1200px) and (min-width: 780px) {
+
+    /********************** Navbar CSS Start **********************/
+    .nav_logo img {
+        width: 20%;
+    }
+
+    .back_btn {
+        width: 100%;
+    }
+
+    /********************** Navbar CSS End **********************/
+    /********************** Registration Page CSS Start **********************/
+    .back_btn {
+        width: 100%;
+    }
+
+    /********************** Registration Page CSS End **********************/
+    /********************** Criteria Page CSS Start **********************/
+    .criteria_nav_logo {
+        width: 28%;
+    }
+
+    .criteria_nav_logo img {
+        width: 25%;
+    }
+
+    .navprofile_pic {
+        width: 40%;
+    }
+
+    .criteriaback_btn {
+        width: 9%;
+    }
+
+    /********************** Criteria Page CSS End **********************/
+    /********************** Pump-Catalog Page CSS Start **********************/
+    #myTable {
+        width: 150%;
+    }
+
+
+
+    /********************** Pump-Catalog Page CSS End **********************/
+
+
+}
+
+/* For Tablet View */
+
+@media (max-width: 779px) and (min-width: 590px) {
+
+    /********************** Navbar CSS Start **********************/
+    .nav_logo {
+        width: 25%;
+    }
+
+    .nav_logo img {
+        width: 40%;
+    }
+
+    /********************** Navbar CSS End **********************/
+    /********************** Registration Page CSS Start **********************/
+    .back_btn {
+        width: 100%;
+    }
+
+    .registration_container {
+        height: 120vh;
+    }
+
+    .registration_row {
+        height: 105vh;
+    }
+
+    /********************** Registration Page CSS End **********************/
+    /********************** Login Model Page CSS Start **********************/
+    .model_img {
+        width: 18%;
+    }
+
+    .modal_social_btn {
+        width: 60%;
+    }
+
+    /********************** Login Model Page CSS End **********************/
+    /********************** Criteria Page CSS Start **********************/
+    .criteria_nav_logo {
+        width: 20%;
+    }
+
+    .criteria_nav_logo img {
+        width: 50%;
+    }
+
+    .navprofile_pic {
+        width: 45%;
+    }
+
+    .navprofile_pic a img {
+        width: 12%;
+    }
+
+    .criteriaback_btn {
+        width: 12%;
+    }
+
+    .search-container {
+        width: 90%;
+    }
+
+    .criteria_container {
+        height: 150vh;
+    }
+
+    .criteria_row {
+        height: 135vh;
+    }
+
+    /********************** Criteria Page CSS End **********************/
+    /********************** Pump-Catalog Page CSS Start **********************/
+    #myTable {
+        width: 150%;
+    }
+
+
+
+
+    /********************** Pump-Catalog Page CSS End **********************/
+
+}
+
+/* For Mobile Portrait View */
+
+@media (max-width: 589px) and (min-width: 315px) {
+
+    /********************** Navbar CSS Start **********************/
+    .nav_logo {
+        width: 50%;
+    }
+
+    .nav_logo img {
+        width: 60%;
+    }
+
+    /********************** Navbar CSS End **********************/
+    /********************** Registration Page CSS Start **********************/
+    .back_btn {
+        width: 65%;
+    }
+
+    .registration_container {
+        height: 150vh;
+    }
+
+    .registration_row {
+        height: 135vh;
+    }
+
+    /********************** Registration Page CSS End **********************/
+    /********************** Login Model Page CSS Start **********************/
+    .model_img {
+        width: 25%;
+    }
+
+    .modal_social_btn {
+        width: 95%;
+    }
+
+    /********************** Login Model Page CSS End **********************/
+    /********************** Criteria Page CSS Start **********************/
+    .criteria_nav_logo {
+        width: 50%;
+    }
+
+    .criteria_nav_logo img {
+        width: 60%;
+    }
+
+    .navprofile_pic {
+        width: 100%;
+    }
+
+    .navprofile_pic a img {
+        width: 12%;
+    }
+
+    .criteriaback_btn {
+        width: 12%;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .criteria_container {
+        height: 230vh;
+    }
+
+    .criteria_row {
+        height: 220vh;
+    }
+
+    /********************** Criteria Page CSS End **********************/
+    /********************** Pump-Catalog Page CSS Start **********************/
+    #myTable {
+        width: 350%;
+    }
+
+
+
+
+    /********************** Pump-Catalog Page CSS End **********************/
+
+
+}
