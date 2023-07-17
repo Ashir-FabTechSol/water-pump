@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Information</title>
+        <title>Performance Curves</title>
         <!-- Bootstrap 5 CSS CDN -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -57,14 +57,14 @@
                 <div class="row rounded-5 pb-3" style="border: 1.5px solid #70707042;">
                     <div class="col-12 ps-4 d-lg-flex d-block align-items-start justify-content-between">
                         <div class="d-md-flex d-grid align-items-center gap-lg-3 gap-md-2 gap-3">
-                            <a href="#" class="text-decoration-none" style="color: #ffffff;">
-                                <button type="button" class="border-0 px-lg-2 px-md-1 px-2 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Performance Curves</button>
+                            <a href="#" class="text-decoration-none" style="color: #23173D;">
+                                <button type="button" class="border-0 px-lg-2 px-md-1 px-2 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #23173D; box-shadow: 0px 2px 7px 0px #FF5C5C;">Performance Curves</button>
                             </a>
                             <a href="#" class="text-decoration-none" style="color: #ffffff;">
                                 <button type="button" class="border-0 px-lg-2 px-md-1 px-4 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Motor Curves</button>
                             </a>
-                            <a href="#" class="text-decoration-none" style="color: #23173D;">
-                                <button type="button" class="border-0 px-md-2 px-4 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #23173D; box-shadow: 0px 2px 7px 0px #FF5C5C;">Information</button>
+                            <a href="#" class="text-decoration-none" style="color: #ffffff;">
+                                <button type="button" class="border-0 px-md-2 px-4 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Information</button>
                             </a>
                             <a href="#" class="text-decoration-none" style="color: #ffffff;">
                                 <button type="button" class="border-0 px-md-2 px-4 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Dimensions</button>
@@ -79,9 +79,11 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <div class="row mt-lg-5 mt-md-0 mt-3 d-flex align-items-start gap-3 ps-4">
-                        <div class="col-lg-3 col-md-4 pb-lg-4 pb-5 rounded-4" style="background-color: #4941560A; border: 1px solid #70707017;">
+                    <div class="row mt-lg-4 mt-md-0 mt-3 d-flex align-items-start gap-3 ps-4">
+                        <div class="col-md-7">
+                            <canvas id="myChart" style="width:100%; max-width:630px"></canvas>
+                        </div>
+                        <!-- <div class="col-lg-3 col-md-4 pb-lg-4 pb-5 rounded-4" style="background-color: #4941560A; border: 1px solid #70707017;">
                             <div>
                                 <h6 class="mb-1" style="color: #FF5C5C;">
                                     Pump
@@ -127,8 +129,8 @@
                                     <p class="mb-0" style="color: #23173D; font-size: small;">50Hz</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 pb-md-0 pb-5 rounded-4" style="background-color: #4941560A; border: 1px solid #70707017;">
+                        </div> -->
+                        <!-- <div class="col-lg-3 col-md-4 pb-md-0 pb-5 rounded-4" style="background-color: #4941560A; border: 1px solid #70707017;">
                             <div>
                                 <h6 class="mb-1" style="color: #FF5C5C;">
                                     Other
@@ -144,7 +146,7 @@
                             </div>
                             <div class="row my-1">
                                 <div class="col-7">
-                                    <p class="mb-0 fw-medium" style="color: #23173D; font-size: small;">Shaft Diameter </p>
+                                    <p class="mb-0 fw-medium" style="color: #23173D; font-size: small;">Shaft Diameter</p>
                                 </div>
                                 <div class="col-5">
                                     <p class="mb-0" style="color: #23173D; font-size: small;">0.00 mm</p>
@@ -182,7 +184,7 @@
                                     <p class="mb-0" style="color: #23173D; font-size: small;">NEMA Standard</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-lg-3 col-md-4 pb-5 rounded-4" style="background-color: #4941560A; border: 1px solid #70707017;">
                             <div>
                                 <h6 class="mb-1" style="color: #FF5C5C;">
@@ -422,5 +424,457 @@
             </div>
         </section>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <!-- Chart CDN -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script>
+            const xValues = Array.from({ length: 17 }, (_, i) => i * 10);
+            const yValues = Array.from({ length: 9 }, (_, i) => i * 20);
+    
+            new Chart("myChart", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [
+                        {
+                            data: [0, 36, 68, 76, { x: 44, y: 76 }, 70, 56, 47, 46, 50, 65, 74, 73, 63, 63, 70, 90, 160],
+                            borderColor: "#FF9871",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 44 &&
+                                    dataPoint.y === 76 &&
+                                    context.datasetIndex === 0
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#FF9871",
+                            fill: false,
+                        },
+                        {
+                            data: [30, 18, 7, 17, 34, 38, 29, 31, 58, 78, 78, 60, { x: 110, y: 57 }, 50, 50, 42, 10, 10],
+                            borderColor: "#45869C",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 110 &&
+                                    dataPoint.y === 57 &&
+                                    context.datasetIndex === 1
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#45869C",
+                            fill: false,
+                        },
+                        {
+                            data: [0, 11, 21, 15, 3, 7, 31, 45, 48, { x: 90, y: 45 }, 28, 12, 12, 25, 28, 19, 7],
+                            borderColor: "#B42CDC",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 90 &&
+                                    dataPoint.y === 45 &&
+                                    context.datasetIndex === 2
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#B42CDC",
+                            fill: false,
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        x: {
+                            ticks: {
+                                stepSize: 10,
+                            },
+                            max: 160,
+                        },
+                        y: {
+                            ticks: {
+                                stepSize: 20,
+                                max: 160,
+                            },
+                        },
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: true,
+                            color: "black",
+                            font: {
+                                weight: "bold",
+                            },
+                            formatter: function(value, context) {
+                                if (context.dataIndex === context.dataset.data.length - 1) {
+                                    if (context.datasetIndex === 0) {
+                                        return "Line 1";
+                                    } else if (context.datasetIndex === 1) {
+                                        return "Line 2";
+                                    } else if (context.datasetIndex === 2) {
+                                        return "Line 3";
+                                    }
+                                }
+                                return "";
+                            },
+                        },
+                    },
+                    legend: { display: false },
+                },
+            });
+        </script>
+
+
+
+
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script>
+            const xValues = Array.from({ length: 17 }, (_, i) => i * 10);
+            const yValues = Array.from({ length: 9 }, (_, i) => i * 20);
+    
+            new Chart("myChart", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [
+                        {
+                            data: [0, 36, 68, 76, { x: 44, y: 76 }, 70, 56, 47, 46, 50, 65, 74, 73, 63, 63, 70, 90, 160],
+                            borderColor: "#FF9871",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 44 &&
+                                    dataPoint.y === 76 &&
+                                    context.datasetIndex === 0
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#FF9871",
+                            fill: false,
+                        },
+                        {
+                            data: [30, 18, 7, 17, 34, 38, 29, 31, 58, 78, 78, 60, { x: 110, y: 57 }, 50, 50, 42, 10, 10],
+                            borderColor: "#45869C",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 110 &&
+                                    dataPoint.y === 57 &&
+                                    context.datasetIndex === 1
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#45869C",
+                            fill: false,
+                        },
+                        {
+                            data: [0, 11, 21, 15, 3, 7, 31, 45, 48, { x: 90, y: 45 }, 28, 12, 12, 25, 28, 19, 7],
+                            borderColor: "#B42CDC",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 90 &&
+                                    dataPoint.y === 45 &&
+                                    context.datasetIndex === 2
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#B42CDC",
+                            fill: false,
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        x: {
+                            ticks: {
+                                stepSize: 10,
+                            },
+                            max: 160,
+                        },
+                        y: {
+                            ticks: {
+                                stepSize: 20,
+                                max: 160,
+                            },
+                        },
+                    },
+                    elements: {
+                        point: {
+                            radius: 0,
+                        },
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: true,
+                            color: "black",
+                            align: "end",
+                            anchor: "end",
+                            font: {
+                                weight: "bold",
+                            },
+                            formatter: function(value, context) {
+                                if (context.dataIndex === context.dataset.data.length - 1) {
+                                    if (context.datasetIndex === 0) {
+                                        return "Line 1: " + value;
+                                    } else if (context.datasetIndex === 1) {
+                                        return "Line 2: " + value;
+                                    } else if (context.datasetIndex === 2) {
+                                        return "Line 3: " + value;
+                                    }
+                                }
+                                return "";
+                            },
+                        },
+                    },
+                    legend: { display: false },
+                },
+            });
+        </script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script>
+            const xValues = Array.from({ length: 17 }, (_, i) => i * 10);
+            const yValues = Array.from({ length: 9 }, (_, i) => i * 20);
+        
+            new Chart("myChart", {
+                type: "line",
+                data: {
+                    labels: xValues,
+                    datasets: [
+                        {
+                            data: [0, 36, 68, 76, { x: 44, y: 76 }, 70, 56, 47, 46, 50, 65, 74, 73, 63, 63, 70, 90, 160],
+                            borderColor: "#FF9871",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 44 &&
+                                    dataPoint.y === 76 &&
+                                    context.datasetIndex === 0
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#FF9871",
+                            fill: false,
+                            datalabels: {
+                                display: true,
+                                color: "black",
+                                align: "center",
+                                anchor: "center",
+                                formatter: function(value, context) {
+                                    if (context.dataIndex === context.dataset.data.length - 1) {
+                                        return "Line 1: " + value;
+                                    }
+                                    return "";
+                                },
+                            },
+                        },
+                        {
+                            data: [30, 18, 7, 17, 34, 38, 29, 31, 58, 78, 78, 60, { x: 110, y: 57 }, 48, 48, 42, 10],
+                            borderColor: "#45869C",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 110 &&
+                                    dataPoint.y === 57 &&
+                                    context.datasetIndex === 1
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#45869C",
+                            fill: false,
+                            datalabels: {
+                                display: true,
+                                color: "black",
+                                align: "center",
+                                anchor: "center",
+                                formatter: function(value, context) {
+                                    if (context.dataIndex === context.dataset.data.length - 1) {
+                                        return "Line 2: " + value;
+                                    }
+                                    return "";
+                                },
+                            },
+                        },
+                        {
+                            data: [0, 11, 21, 15, 3, 7, 31, 45, 48, { x: 90, y: 45 }, 28, 12, 12, 25, 28, 19, 5],
+                            borderColor: "#B42CDC",
+                            borderWidth: 1,
+                            pointRadius: function(context) {
+                                const dataPoint = context.dataset.data[context.dataIndex];
+                                if (
+                                    dataPoint.x === 90 &&
+                                    dataPoint.y === 45 &&
+                                    context.datasetIndex === 2
+                                ) {
+                                    return 5;
+                                }
+                                return 0;
+                            },
+                            pointBackgroundColor: "#B42CDC",
+                            fill: false,
+                            datalabels: {
+                                display: true,
+                                color: "black",
+                                align: "center",
+                                anchor: "center",
+                                formatter: function(value, context) {
+                                    if (context.dataIndex === context.dataset.data.length - 1) {
+                                        return "Line 3: " + value;
+                                    }
+                                    return "";
+                                },
+                            },
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        x: {
+                            ticks: {
+                                stepSize: 10,
+                            },
+                            max: 160,
+                        },
+                        y: {
+                            ticks: {
+                                stepSize: 20,
+                                max: 160,
+                            },
+                        },
+                    },
+                    elements: {
+                        point: {
+                            radius: 0,
+                        },
+                    },
+                    plugins: {
+                        datalabels: {
+                            font: {
+                                weight: "bold",
+                            },
+                        },
+                    },
+                    legend: { display: false },
+                },
+            });
+        </script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script>
+            const xValues = Array.from({ length: 17 }, (_, i) => i * 10);
+            const yValues = Array.from({ length: 9 }, (_, i) => i * 20);
+          
+            new Chart("myChart", {
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [
+                  {
+                    data: [0, 36, 68, 76, { x: 44, y: 76 }, 70, 56, 47, 46, 50, 65, 74, 73, 63, 63, 70, 90, 160],
+                    borderColor: "#FF9871",
+                    borderWidth: 1,
+                    pointRadius: function (context) {
+                      const dataPoint = context.dataset.data[context.dataIndex];
+                      if (
+                        dataPoint.x === 44 &&
+                        dataPoint.y === 76 &&
+                        context.datasetIndex === 0
+                      ) {
+                        return 5;
+                      }
+                      return 0;
+                    },
+                    pointBackgroundColor: "#FF9871",
+                    fill: false,
+                  },
+                  {
+                    data: [30, 18, 7, 17, 34, 38, 29, 31, 58, 78, 78, 60, { x: 110, y: 57 }, 50, 50, 42, 10, 10],
+                    borderColor: "#45869C",
+                    borderWidth: 1,
+                    pointRadius: function (context) {
+                      const dataPoint = context.dataset.data[context.dataIndex];
+                      if (
+                        dataPoint.x === 110 &&
+                        dataPoint.y === 57 &&
+                        context.datasetIndex === 1
+                      ) {
+                        return 5;
+                      }
+                      return 0;
+                    },
+                    pointBackgroundColor: "#45869C",
+                    fill: false,
+                  },
+                  {
+                    data: [0, 11, 21, 15, 3, 7, 31, 45, 48, { x: 90, y: 45 }, 28, 12, 12, 25, 28, 18, 7],
+                    borderColor: "#B42CDC",
+                    borderWidth: 1,
+                    pointRadius: function (context) {
+                      const dataPoint = context.dataset.data[context.dataIndex];
+                      if (
+                        dataPoint.x === 90 &&
+                        dataPoint.y === 46 &&
+                        context.datasetIndex === 2
+                      ) {
+                        return 5;
+                      }
+                      return 0;
+                    },
+                    pointBackgroundColor: "#B42CDC",
+                    fill: false,
+                  },
+                ],
+              },
+              options: {
+                scales: {
+                  x: {
+                    ticks: {
+                      stepSize: 10,
+                    },
+                    max: 160,
+                  },
+                  y: {
+                    ticks: {
+                      stepSize: 20,
+                      max: 160,
+                    },
+                  },
+                },
+                elements: {
+                  point: {
+                    radius: 0,
+                  },
+                },
+                legend: { display: false },
+              },
+            });
+          </script> -->
     </body>
 </html>
