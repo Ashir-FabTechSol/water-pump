@@ -386,3 +386,22 @@ body {
 
 
 }
+
+
+/* ============ Nadia css ========= */
+
+.area-height{
+    min-height: 100vh;
+}
+
+.blue-txt{
+    color: #24183E;
+}
+
+.fix-row {
+    width: 1060px;
+    overflow-x: auto
+}
+.fit-row-main {
+    overflow-x: auto
+}
