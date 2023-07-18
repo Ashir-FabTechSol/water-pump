@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <!-- Font Awesome CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="//cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
     </head>
     <body>
         <!-- ----------------- nav start ----------  -->
@@ -84,7 +86,8 @@
                 </div>
             </div>
         </div>
-        <div class="container shadow-lg py-3 px-md-5 px-3 mt-3 mb-5 rounded-5 criteria_container">
+        <div class="container">
+        <div class="shadow-lg py-3 px-md-5 px-3 mt-3 mb-5 rounded-5 criteria_container h-100">
             <h4 class="fw-medium mb-1 ms-md-3" style="color: #24183E;">Criteria (Sizing)</h4>
             <form action="" method="post">
                 <div class="row rounded-4 pb-3 ps-lg-3 ps-md-2 pe-md-2 criteria_row">
@@ -98,9 +101,7 @@
                             </select>
                         </div>
                         <div class="col-lg-2 col-md-4 col-4 d-flex justify-content-end">
-                            <a href="./index.html" class="text-decoration-none">
-                                <button type="submit" class="rounded-3 px-md-4 px-2 py-md-1" style="background-color: #FF5C5C; color: #ffffff; border: 2.5px solid #68242457;">Start</button>
-                            </a>
+                                <button type="button" id="hide" class="rounded-3 px-md-4 px-2 py-md-1" style="background-color: #FF5C5C; color: #ffffff; border: 2.5px solid #68242457;">Start</button>
                         </div>
                     </div>
                     <div class="row d-flex align-items-center justify-content-evenly mt-1">
@@ -478,8 +479,60 @@
                     </div>
                 </div>
             </form>
+            <div class="row border rounded-5 py-2 my-3 content" style="display: none;">
+               <div class="table-responsive">
+                <table id="example" class="table" style="width:100%">
+                    <thead class="fw-medium" style="font-size: 10px;">
+                        <tr>
+                            <th class="pe-0 text-nowrap px-3 py-2">Pump Type</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">Pump Diameter</th>
+                            <th class="pe-0 text-nowrap px-3 py-2"><div>
+                               <span>Q(m<sup>3</sup>/h) H(m) hPump(%)</span>
+                            </div></th>
+                            <th class="pe-0 text-nowrap px-3 py-2">P2 (KW) Motor type</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">Motor Diameter</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">Motor Type</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">Voltage (V)</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">Phase</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">Frequency (Hz)</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">hMotor</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">P1 (KW)</th>
+                            <th class="pe-0 text-nowrap px-3 py-2">Motor Power (KW)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="fw-normal">
+                        <tr>
+                            <td class="pb-0 text-nowrap" style="color: #0055FF;">S4 SP2/18</td>
+                            <td class="pb-0 text-nowrap">4”</td>
+                            <td class="pb-0 text-nowrap">Three Phase</td>
+                            <td class="pb-0 text-nowrap text-end">220-380</td>
+                            <td class="pb-0 text-nowrap text-center">50</td>
+                            <td class="pb-0 text-nowrap">4 T 1 HP</td>
+                            <td class="pb-0 text-nowrap">4”</td>
+                            <td class="pb-0 text-nowrap">0.75</td>
+                            <td class="pb-0 text-nowrap">0.75</td>
+                            <td class="pb-0 text-nowrap">0.75</td>
+                            <td class="pb-0 text-nowrap">0.75</td>
+                            <td class="pb-0 text-nowrap">0.75</td>
+                        </tr>
+                    </tbody>
+                </table>
+               </div>
+            </div>
+        </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="/DataTables/datatables.js"></script>
 </body>
+<script>
+    new DataTable('#example');
+</script>
+<script>
+    $("#hide").click(function(){
+    $(".content").toggle();
+});
+</script>
 </html>
