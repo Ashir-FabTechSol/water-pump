@@ -314,6 +314,11 @@ body {
     /********************** Pump-Catalog Page CSS End **********************/
 
 }
+@media screen and (max-width: 576px){
+    .img-pump{
+        height: 530px;
+    }
+}
 
 /* For Mobile Portrait View */
 
@@ -417,4 +422,14 @@ body {
 }
 .fit-row-main {
     overflow-x: auto
+}
+
+.grey-bg{
+    background-color: #F8F7F8 !important;
+}
+
+.img-pump{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
