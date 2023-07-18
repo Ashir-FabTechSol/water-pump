@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Motor Curves</title>
+        <!-- Bootstrap 5 CSS CDN -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <!-- ----------------- nav start ----------  -->
+        <nav class="navbar navbar-expand-md p-lg-4 p-md-3 p-2" style="background: transparent;">
+            <div class="container-fluid color_1 rounded-4 shadow-sm px-3 py-lg-3 py-md-2 py-3">
+                <div class="criteria_nav_logo">
+                    <img src="./images/iselect_trans_393x150.png8-.png" alt="logo">
+                </div>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    style="background-color: #ffffff; border: 1px solid #24183E;"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-0 mt-3 mt-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white py-0 fs-3 fw-light d-flex justify-content-center" aria-current="page" href="#">Welcome to the Software</a>
+                        </li>
+                    </ul>
+                    <div class="nav_btn mt-3 mt-md-0 navprofile_pic">
+                        <a href="./registration.html" class="text-decoration-none text-white d-flex align-items-center justify-content-md-end justify-content-center gap-lg-3 gap-2">
+                            <img src="./images/zoe-fernandez--zqoE7jnQgw-unsplash.png" class="rounded-circle" alt="">
+                            <span class="mb-0">Diana Palavandishcili</span>
+                            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- -------- nav end -----  -->
+        <section class="px-md-4 px-2">
+            <div class="container-fluid shadow-lg px-md-4 px-3 py-md-4 py-3 mt-1 rounded-5">
+                <div class="row rounded-5 pb-3" style="border: 1.5px solid #70707042;">
+                    <div class="col-12 ps-4 d-lg-flex d-block align-items-start justify-content-between">
+                        <div class="d-md-flex d-grid align-items-center gap-lg-3 gap-md-2 gap-3">
+                            <a href="#" class="text-decoration-none" style="color: #ffffff;">
+                                <button type="button" class="border-0 px-lg-2 px-md-1 px-2 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Performance Curves</button>
+                            </a>
+                            <a href="#" class="text-decoration-none" style="color: #23173D;">
+                                <button type="button" class="border-0 px-lg-2 px-md-1 px-4 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #23173D; box-shadow: 0px 2px 7px 0px #FF5C5C;">Motor Curves</button>
+                            </a>
+                            <a href="#" class="text-decoration-none" style="color: #ffffff;">
+                                <button type="button" class="border-0 px-md-2 px-4 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Information</button>
+                            </a>
+                            <a href="#" class="text-decoration-none" style="color: #ffffff;">
+                                <button type="button" class="border-0 px-md-2 px-4 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Dimensions</button>
+                            </a>
+                            <a href="#" class="text-decoration-none" style="color: #ffffff;">
+                                <button type="button" class="border-0 px-lg-2 px-md-1 px-2 py-1 rounded-2 rounded-top-0 fw-normal" style="background-color: #FF5C5C; color: #ffffff;">Product Picture</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mt-lg-5 mt-3 d-md-flex align-items-md-start ps-4">
+                        <div class="col-lg-7 col-md-9">
+                            <canvas id="mychart_1" style="width:100%; max-width:630px;"></canvas>
+                        </div>
+                        <div class="col-md-3 d-md-flex justify-content-md-center">
+                            <form method="post">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                            checked
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            Eff
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            Cos φ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                            checked
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            I (A)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                            checked
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            rpm
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            Power
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1 rounded-circle"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                            checked
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            380 V
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1 rounded-circle"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            400 V
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input py-2 px-1 rounded-circle"
+                                            type="checkbox"
+                                            value=""
+                                            id="flexCheckDefault"
+                                            style="border: 1px solid #90B9E9;"
+                                        >
+                                        <label class="form-check-label" for="flexCheckDefault" style="color: #23173D;">
+                                            415 V
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row mt-3 d-md-flex align-items-md-end ps-4">
+                        <div class="col-lg-7 col-md-9">
+                            <canvas id="mychart_2" style="width:100%; max-width:630px;"></canvas>
+                        </div>
+                        <div class="col-lg-5 col-md-3 mt-md-0 mt-3 d-flex justify-content-end">
+                            <div>
+                                    <button type="button" class="px-4 py-1 rounded-3" style="color: #ffffff; border: 2px solid #68242457; background-color: #0055FF;">Close</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <!-- Chart CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script>
+          const aValues = Array.from({ length: 6 }, (_, i) => i * 25);
+          const bValues = Array.from({ length: 9 }, (_, i) => i * 0.125);
+        
+          new Chart("mychart_1", {
+            type: "line",
+            data: {
+              labels: aValues,
+              datasets: [
+                {
+                  data: [0.000, 0.480, { x: 30, y: 0.330 }, 0.370, 0.390, 0.560, 1.000],
+                  borderColor: "#FF9871",
+                  borderWidth: 1,
+                  pointRadius: function(context) {
+                    const dataPoint = context.dataset.data[context.dataIndex];
+                    if (
+                      dataPoint.x === 30 &&
+                      dataPoint.y === 0.330 &&
+                      context.datasetIndex === 0
+                    ) {
+                      return 5;
+                    }
+                    return 0;
+                  },
+                  pointBackgroundColor: "#FF9871",
+                  fill: false,
+                },
+                {
+                  data: [0.175, 0.100, 0.200, { x: 75, y: 0.505 }, 0.300, 0.075],
+                  borderColor: "#45869C",
+                  borderWidth: 1,
+                  pointRadius: function(context) {
+                    const dataPoint = context.dataset.data[context.dataIndex];
+                    if (
+                      dataPoint.x === 75 &&
+                      dataPoint.y === 0.505 &&
+                      context.datasetIndex === 1
+                    ) {
+                      return 5;
+                    }
+                    return 0;
+                  },
+                  pointBackgroundColor: "#45869C",
+                  fill: false,
+                },
+                {
+                  data: [0, 0.100, 0.240, { x: 75, y: 0.230 }, 0.175, 0.025],
+                  borderColor: "#B42CDC",
+                  borderWidth: 1,
+                  pointRadius: function(context) {
+                    const dataPoint = context.dataset.data[context.dataIndex];
+                    if (
+                      dataPoint.x === 75 &&
+                      dataPoint.y === 0.230 &&
+                      context.datasetIndex === 2
+                    ) {
+                      return 5;
+                    }
+                    return 0;
+                  },
+                  pointBackgroundColor: "#B42CDC",
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              plugins: {
+                datalabels: {
+                  color: "black",
+                  font: {
+                    weight: "bold",
+                  },
+                  formatter: function(value, context) {
+                    if (context.dataIndex === context.dataset.data.length - 1) {
+                      if (context.datasetIndex === 0) {
+                        return "Line 1";
+                      } else if (context.datasetIndex === 1) {
+                        return "Line 2";
+                      } else if (context.datasetIndex === 2) {
+                        return "Line 3";
+                      }
+                    }
+                    return "";
+                  },
+                },
+              },
+              legend: { display: false },
+              scales: {
+                yAxes: [
+                  {
+                    id: "left-axis",
+                    position: "left",
+                    ticks: {
+                      min: 0,
+                      max: 1,
+                      stepSize: 0.125,
+                      callback: function(value) {
+                        return value.toFixed(3);
+                      },
+                    },
+                  },
+                  {
+                    id: "right-axis",
+                    position: "right",
+                    ticks: {
+                      min: 0,
+                      max: 100,
+                      stepSize: 12.5,
+                      callback: function(value) {
+                        return value.toFixed(1);
+                      },
+                    },
+                  },
+                ],
+              },
+              afterDraw: function(chart) {
+                var ctx = chart.chart.ctx;
+                ctx.save();
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillStyle = "black";
+                ctx.font = "12px Arial";
+        
+                chart.config.data.datasets.forEach(function(dataset) {
+                  var datasetMeta = chart.getDatasetMeta(
+                    chart.config.data.datasets.indexOf(dataset)
+                  );
+                  datasetMeta.data.forEach(function(point, index) {
+                    var value = dataset.data[index];
+                    ctx.fillText(value, point._model.x, point._model.y - 10);
+                  });
+                });
+        
+                ctx.restore();
+              },
+            },
+          });
+        </script>
+        <script>
+          const xValues = Array.from({ length: 6 }, (_, i) => i * 25);
+          const yValues = Array.from({ length: 9 }, (_, i) => i * 400);
+        
+          new Chart("mychart_2", {
+            type: "line",
+            data: {
+              labels: xValues,
+              datasets: [
+                {
+                  data: [0, { x: 25, y: 950 }, 1100, 1550, 2650, 2950],
+                  borderColor: "#FF9871",
+                  borderWidth: 1,
+                  pointRadius: function(context) {
+                    const dataPoint = context.dataset.data[context.dataIndex];
+                    if (
+                      dataPoint.x === 25 &&
+                      dataPoint.y === 950 &&
+                      context.datasetIndex === 0
+                    ) {
+                      return 5;
+                    }
+                    return 0;
+                  },
+                  pointBackgroundColor: "#FF9871",
+                  fill: false,
+                },
+                {
+                  data: [0, 1300, 1250, 1450, { x:100, y:2690}, 2410],
+                  borderColor: "#45869C",
+                  borderWidth: 1,
+                  pointRadius: function(context) {
+                    const dataPoint = context.dataset.data[context.dataIndex];
+                    if (
+                      dataPoint.x === 100 &&
+                      dataPoint.y === 2690 &&
+                      context.datasetIndex === 1
+                    ) {
+                      return 5;
+                    }
+                    return 0;
+                  },
+                  pointBackgroundColor: "#45869C",
+                  fill: false,
+                },
+              ],
+            },
+            options: {
+              plugins: {
+                datalabels: {
+                  color: "black",
+                  font: {
+                    weight: "bold",
+                  },
+                  formatter: function(value, context) {
+                    if (context.dataIndex === context.dataset.data.length - 1) {
+                      if (context.datasetIndex === 0) {
+                        return "Line 1";
+                      } else if (context.datasetIndex === 1) {
+                        return "Line 2";
+                      } 
+                    }
+                    return "";
+                  },
+                },
+              },
+              legend: { display: false },
+              scales: {
+                yAxes: [
+                  {
+                    id: "left-axis",
+                    position: "left",
+                    ticks: {
+                      min: 0,
+                      max: 3200,
+                      stepSize: 400,
+                    },
+                  },
+                  {
+                    id: "right-axis",
+                    position: "right",
+                    ticks: {
+                      min: 0,
+                      max: 48,
+                      stepSize: 6,
+                    },
+                  },
+                ],
+              },
+              afterDraw: function(chart) {
+                var ctx = chart.chart.ctx;
+                ctx.save();
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillStyle = "black";
+                ctx.font = "12px Arial";
+        
+                chart.config.data.datasets.forEach(function(dataset) {
+                  var datasetMeta = chart.getDatasetMeta(
+                    chart.config.data.datasets.indexOf(dataset)
+                  );
+                  datasetMeta.data.forEach(function(point, index) {
+                    var value = dataset.data[index];
+                    ctx.fillText(value, point._model.x, point._model.y - 10);
+                  });
+                });
+        
+                ctx.restore();
+              },
+            },
+          });
+        </script>
+
+    </body>
+</html>
