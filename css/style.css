@@ -99,14 +99,18 @@ body {
     width: 12%;
 }
 
-.criteria_container {
+/* .criteria_container {
     height: 105vh;
-}
+} */
 
 .criteria_row {
     border: 1.5px solid #70707042;
-    height: 93vh;
+    height: 130vh;
 }
+.form-select .brand-selection:hover {
+    background-color: #FF5C5C;
+    color: #FFFFFF;
+  }
 
 /********************** Criteria Page CSS End **********************/
 /********************** Pump-Catalog Page CSS Start **********************/
@@ -287,7 +291,7 @@ body {
     }
 
     .criteria_row {
-        height: 135vh;
+        height: 185vh;
     }
 
     /********************** Criteria Page CSS End **********************/
@@ -376,7 +380,7 @@ body {
     }
 
     .criteria_row {
-        height: 220vh;
+        height: 310vh;
     }
 
     /********************** Criteria Page CSS End **********************/

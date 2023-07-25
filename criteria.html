@@ -103,439 +103,653 @@
             </div>
         </div>
         <div class="container">
-        <div class="shadow-lg py-3 px-md-5 px-3 mt-3 mb-5 rounded-5 criteria_container h-100">
-            <h4 class="fw-medium mb-1 ms-md-3" style="color: #24183E;">Criteria (Sizing)</h4>
-            <form action="" method="post">
-                <div class="row rounded-4 pb-3 ps-lg-3 ps-md-2 pe-md-2 criteria_row">
-                    <div class="row d-flex align-items-center justify-content-between">
-                        <div class="col-lg-3 col-md-5 col-8">
-                            <select class="form-select px-3 py-1" aria-label="Default select example" style="color: #707070;">
-                                <option selected>Select Type</option>
-                                <option value="1" style="color: #000;">Pump Type</option>
-                                <option value="2" style="color: #ffffff; background-color: #FF5C5C;">Submersible Pump</option>
-                                <option value="3" style="color: #000;">Surface Pump</option>
-                            </select>
+            <div class="shadow-lg py-3 px-md-5 px-3 mt-3 mb-5 rounded-5 criteria_container h-100">
+                <h4 class="fw-medium mb-1 ms-md-3" style="color: #24183E;">Brand</h4>
+                <form action="" method="post">
+                    <div class="row rounded-4 pb-3 ps-lg-3 ps-md-2 pe-md-2 criteria_row">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-lg-3 col-md-5 col-8">
+                                <select class="form-select px-3 py-1" aria-label="Default select example" style="color: #707070;">
+                                    <option class="brand-selection" selected>Select Type</option>
+                                    <option class="brand-selection" value="1" style="color: #000;">Klassen</option>
+                                    <option class="brand-selection" value="2" style="color: #000;">Motecks</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-4 d-flex justify-content-end">
+                                <button
+                                    type="button"
+                                    id="hide"
+                                    class="rounded-3 px-md-4 px-2 py-md-1"
+                                    style="background-color: #FF5C5C; color: #ffffff; border: 2.5px solid #68242457;"
+                                >Start</button>
+                            </div>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-4 d-flex justify-content-end">
-                                <button type="button" id="hide" class="rounded-3 px-md-4 px-2 py-md-1" style="background-color: #FF5C5C; color: #ffffff; border: 2.5px solid #68242457;">Start</button>
+                        <div class="row d-flex align-items-center justify-content-evenly mt-1">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="row d-flex align-items-end rounded-4 py-4 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
+                                    <div class="col-6 pe-1">
+                                        <label for="criteria-flow" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Flow
+                                            <span style="color: #FFA200;">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            class="form-control px-2 py-1 rounded-1"
+                                            style="border: 1.5px solid #24183E; font-size: small;"
+                                            id="criteria-flow"
+                                            placeholder=""
+                                            required
+                                        >
+                                    </div>
+                                    <div class="col-6 ps-1">
+                                        <select class="form-select px-2 py-1 rounded-1" aria-label="Default select example" style="color: #707070; border: 1.5px solid #24183E; font-size: small;">
+                                            <option selected>Select Type</option>
+                                            <option value="1" style="color: #000;">
+                                                <p class="mb-0">
+                                                    m
+                                                    <sup>3</sup>
+                                                    /h
+                                                </p>
+                                            </option>
+                                            <option value="2" style="color: #ffffff; background-color: #FF5C5C;">l/s</option>
+                                            <option value="3" style="color: #000;">l/min</option>
+                                            <option value="4" style="color: #000;">GPM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 pe-1">
+                                        <label for="criteria-head" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Head
+                                            <span style="color: #FFA200;">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            class="form-control px-2 py-1 rounded-1"
+                                            style="border: 1.5px solid #24183E; font-size: small;"
+                                            id="criteria-head"
+                                            placeholder=""
+                                            required
+                                        >
+                                    </div>
+                                    <div class="col-6 ps-1">
+                                        <select class="form-select px-2 py-1 rounded-1" aria-label="Default select example" style="color: #707070; border: 1.5px solid #24183E; font-size: small;">
+                                            <option selected>Select Type</option>
+                                            <option value="1" style="color: #000;">m</option>
+                                            <option value="2" style="color: #ffffff; background-color: #FF5C5C;">f</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="row d-flex align-items-end rounded-4 py-4 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-tolerance" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            -H Tolerance (%):
+                                        </label>
+                                        <input
+                                            type="number"
+                                            class="form-control px-2 py-1 rounded-1"
+                                            style="border: 1.5px solid #24183E; font-size: small;"
+                                            id="criteria-tolerance"
+                                            placeholder="10"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="criteria-tolerance" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            -H Tolerance (%):
+                                        </label>
+                                        <input
+                                            type="number"
+                                            class="form-control px-2 py-1 rounded-1"
+                                            style="border: 1.5px solid #24183E; font-size: small;"
+                                            id="criteria-tolerance"
+                                            placeholder="10"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-6">
+                                <div class="row d-flex align-items-end rounded-4 pt-4 pb-5 me-1 ms-1 ms-md-0" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Frequency*
+                                        </label>
+                                        <div class="form-check" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                50 Hz
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                60 Hz
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-6">
+                                <div class="row d-flex align-items-end rounded-4 py-4" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Pump Material
+                                        </label>
+                                        <div class="form-check" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Stainless Steel
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-1" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Cast Iron
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-1" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Noryl
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-lg-4">
+                                <div class="row d-flex align-items-end rounded-4 pt-4 pb-5 me-lg-1 ms-lg-0 ms-1" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Phase
+                                        </label>
+                                        <div class="form-check" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Single Phase
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Three Phase
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-lg-4">
+                                <div class="row d-flex align-items-end rounded-4 py-4 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Rated Diameter
+                                        </label>
+                                        <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    5
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    6
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    7
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    8
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    9
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    10
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    12
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-lg-4">
+                                <div class="row d-flex align-items-end rounded-4 py-4 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Voltage
+                                        </label>
+                                        <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-1"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center mt-1" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    110-120 V
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-1"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center mt-1" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    220-230 V
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center mt-2" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-1"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center mt-1" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    380 V
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-1"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center mt-1" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    400 V
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-1"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center mt-1" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    415 V
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center mt-2" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-1"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center mt-1" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    440-460 V
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-lg-4">
+                                <div class="row d-flex align-items-end rounded-4 pt-4 pb-5 me-lg-1 ms-lg-0 ms-1" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Start
+                                        </label>
+                                        <div class="form-check" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                DOL
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Star Delta
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-lg-4">
+                                <div class="row d-flex align-items-end rounded-4 pt-4 pb-3 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Nominal Diameter
+                                        </label>
+                                        <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    4
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    5
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    6
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    7
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    8
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                            <div class="ms-5">
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    10
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                                            <div>
+                                                <input
+                                                    class="form-check-input rounded-circle mt-2"
+                                                    style="border: 1px solid #24183E;"
+                                                    type="checkbox"
+                                                    value=""
+                                                    id="flexCheckDefault"
+                                                >
+                                                <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                    12
+                                                    <p class="mb-0 fs-5">&#8243;</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mt-lg-4">
+                                <div class="row d-flex align-items-end rounded-4 pt-4 pb-3 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
+                                    <div class="col-12">
+                                        <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
+                                            Voltage
+                                        </label>
+                                        <div class="form-check" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                DOL
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Star Delta
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-2" id="criteria-checkboxes">
+                                            <input
+                                                class="form-check-input rounded-circle mt-1"
+                                                style="border: 1px solid #24183E;"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckDefault"
+                                            >
+                                            <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
+                                                Star Delta
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <p class="mb-0">Curve Tolerance: ISO 9906 (2012) Grade 3B</p>
+                                <p class="mb-0">For special tolerance class, please contact us.</p>
+                                <p class="mb-0">All data shown are not binding. Impo reserves the right to change data and dimensions without notice.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row d-flex align-items-center justify-content-evenly mt-1">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="row d-flex align-items-end rounded-4 py-4 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
-                                <div class="col-6 pe-1">
-                                    <label for="criteria-flow" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                        Flow
-                                        <span style="color: #FFA200;">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        class="form-control px-2 py-1 rounded-1"
-                                        style="border: 1.5px solid #24183E; font-size: small;"
-                                        id="criteria-flow"
-                                        placeholder=""
-                                        required
-                                    >
-                                </div>
-                                <div class="col-6 ps-1">
-                                    <select class="form-select px-2 py-1 rounded-1" aria-label="Default select example" style="color: #707070; border: 1.5px solid #24183E; font-size: small;">
-                                        <option selected>Select Type</option>
-                                        <option value="1" style="color: #000;">
-                                            <p class="mb-0">m
-                                                <sup>3</sup>/h
-                                            </p>
-                                        </option>
-                                        <option value="2" style="color: #ffffff; background-color: #FF5C5C;">l/s</option>
-                                        <option value="3" style="color: #000;">l/min</option>
-                                        <option value="4" style="color: #000;">GPM</option>
-                                    </select>
-                                </div>
-                                <div class="col-6 pe-1">
-                                    <label for="criteria-head" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                        Head
-                                        <span style="color: #FFA200;">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        class="form-control px-2 py-1 rounded-1"
-                                        style="border: 1.5px solid #24183E; font-size: small;"
-                                        id="criteria-head"
-                                        placeholder=""
-                                        required
-                                    >
-                                </div>
-                                <div class="col-6 ps-1">
-                                    <select class="form-select px-2 py-1 rounded-1" aria-label="Default select example" style="color: #707070; border: 1.5px solid #24183E; font-size: small;">
-                                        <option selected>Select Type</option>
-                                        <option value="1" style="color: #000;">m</option>
-                                        <option value="2" style="color: #ffffff; background-color: #FF5C5C;">f</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="row d-flex align-items-end rounded-4 py-4 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
-                            <div class="col-12">
-                                <label for="criteria-tolerance" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                    -H Tolerance (%):
-                                </label>
-                                <input
-                                    type="number"
-                                    class="form-control px-2 py-1 rounded-1"
-                                    style="border: 1.5px solid #24183E; font-size: small;"
-                                    id="criteria-tolerance"
-                                    placeholder="10"
-                                    required
-                                >
-                            </div>
-                            <div class="col-12">
-                                <label for="criteria-tolerance" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                    -H Tolerance (%):
-                                </label>
-                                <input
-                                    type="number"
-                                    class="form-control px-2 py-1 rounded-1"
-                                    style="border: 1.5px solid #24183E; font-size: small;"
-                                    id="criteria-tolerance"
-                                    placeholder="10"
-                                    required
-                                >
-                            </div>
-                        </div>
-                    </div>
-                        <div class="col-lg-2 col-md-3 col-6">
-                            <div class="row d-flex align-items-end rounded-4 pt-4 pb-5 me-1 ms-1 ms-md-0" style="background-color: #70707017;">
-                                <div class="col-12">
-                                    <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                        Frequency*
-                                    </label>
-                                    <div class="form-check" id="criteria-checkboxes">
-                                        <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            50 Hz
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-2" id="criteria-checkboxes">
-                                        <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            60 Hz
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-6">
-                            <div class="row d-flex align-items-end rounded-4 py-4" style="background-color: #70707017;">
-                                <div class="col-12">
-                                    <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                        Pump Material
-                                    </label>
-                                    <div class="form-check" id="criteria-checkboxes">
-                                        <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            Stainless Steel
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-1" id="criteria-checkboxes">
-                                        <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            Cast Iron
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-1" id="criteria-checkboxes">
-                                        <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            Noryl
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mt-lg-4">
-                            <div class="row d-flex align-items-end rounded-4 pt-4 pb-5 me-lg-1 ms-lg-0 ms-1" style="background-color: #70707017;">
-                                <div class="col-12">
-                                    <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                        Phase
-                                    </label>
-                                    <div class="form-check" id="criteria-checkboxes">
-                                        <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            Single Phase
-                                        </label>
-                                    </div>
-                                    <div class="form-check mt-2" id="criteria-checkboxes">
-                                        <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            Three Phase
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mt-lg-4">
-                            <div class="row d-flex align-items-end rounded-4 py-4 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
-                                <div class="col-12">
-                                    <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                        Rated Diameter
-                                    </label>
-                                    <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
+                </form>
+                <div class="row border rounded-5 py-2 my-3 content" style="display: none;">
+                    <div class="table-responsive">
+                        <table id="example" class="table" style="width:100%">
+                            <thead class="fw-medium" style="font-size: 10px;">
+                                <tr>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Pump Type</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Pump Diameter</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">
                                         <div>
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            5 <p class="mb-2">&#9900;</p>
-                                        </label>
+                                            <span>Q(m
+                                                <sup>3</sup>/h) H(m) hPump(%)
+                                            </span>
                                         </div>
-                                        <div class="ms-5">
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            6 <p class="mb-2">&#9900;</p>
-                                        </label>
-                                        </div>
-                                        <div class="ms-5">
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            7 <p class="mb-2">&#9900;</p>
-                                        </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
-                                        <div>
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            8 <p class="mb-2">&#9900;</p>
-                                        </label>
-                                        </div>
-                                        <div class="ms-5">
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            9 <p class="mb-2">&#9900;</p>
-                                        </label>
-                                        </div>
-                                        <div class="ms-5">
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            10 <p class="mb-2">&#9900;</p>
-                                        </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
-                                        <div>
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            12 <p class="mb-2">&#9900;</p>
-                                        </label>
-                                        </div> 
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mt-lg-4">
-                            <div class="row d-flex align-items-end rounded-4 pt-4 pb-5 me-md-1 ms-1 ms-md-0" style="background-color: #70707017;">
-                                <div class="col-12">
-                                    <label for="criteria-checkboxes" class="form-label mb-0 fw-semibold" style="color: #24183E;">
-                                        Voltage
-                                    </label>
-                                    <div class="form-check d-flex align-items-center" id="criteria-checkboxes">
-                                        <div>
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            220V
-                                        </label>
-                                        </div>
-                                        <div class="ms-5">
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            380V
-                                        </label>
-                                        </div>
-                                        <div class="ms-5">
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            400V
-                                        </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-check d-flex align-items-center mt-2" id="criteria-checkboxes">
-                                        <div>
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            415V
-                                        </label>
-                                        </div>
-                                        <div class="ms-5">
-                                            <input
-                                            class="form-check-input rounded-circle"
-                                            style="border: 1px solid #24183E;"
-                                            type="checkbox"
-                                            value=""
-                                            id="flexCheckDefault"
-                                        >
-                                        <label class="form-check-label d-flex align-items-center" for="flexCheckDefault" style="color: #24183E; font-size: 12px;">
-                                            460V
-                                        </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mt-2">
-                            <p class="mb-0">Curve Tolerance: ISO 9906 (2012) Grade 3B</p>
-                            <p class="mb-0">For special tolerance class, please contact us.</p>
-                            <p class="mb-0">All data shown are not binding. Impo reserves the right to change data and dimensions without notice.</p>
-                        </div>
+                                    </th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">P2 (KW) Motor type</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Motor Diameter</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Motor Type</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Voltage (V)</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Phase</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Frequency (Hz)</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">hMotor</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">P1 (KW)</th>
+                                    <th class="pe-0 text-nowrap px-3 py-2">Motor Power (KW)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="fw-normal">
+                                <tr>
+                                    <td class="pb-0 text-nowrap" style="color: #0055FF;">S4 SP2/18</td>
+                                    <td class="pb-0 text-nowrap">4”</td>
+                                    <td class="pb-0 text-nowrap">Three Phase</td>
+                                    <td class="pb-0 text-nowrap text-end">220-380</td>
+                                    <td class="pb-0 text-nowrap text-center">50</td>
+                                    <td class="pb-0 text-nowrap">4 T 1 HP</td>
+                                    <td class="pb-0 text-nowrap">4”</td>
+                                    <td class="pb-0 text-nowrap">0.75</td>
+                                    <td class="pb-0 text-nowrap">0.75</td>
+                                    <td class="pb-0 text-nowrap">0.75</td>
+                                    <td class="pb-0 text-nowrap">0.75</td>
+                                    <td class="pb-0 text-nowrap">0.75</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </form>
-            <div class="row border rounded-5 py-2 my-3 content" style="display: none;">
-               <div class="table-responsive">
-                <table id="example" class="table" style="width:100%">
-                    <thead class="fw-medium" style="font-size: 10px;">
-                        <tr>
-                            <th class="pe-0 text-nowrap px-3 py-2">Pump Type</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">Pump Diameter</th>
-                            <th class="pe-0 text-nowrap px-3 py-2"><div>
-                               <span>Q(m<sup>3</sup>/h) H(m) hPump(%)</span>
-                            </div></th>
-                            <th class="pe-0 text-nowrap px-3 py-2">P2 (KW) Motor type</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">Motor Diameter</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">Motor Type</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">Voltage (V)</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">Phase</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">Frequency (Hz)</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">hMotor</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">P1 (KW)</th>
-                            <th class="pe-0 text-nowrap px-3 py-2">Motor Power (KW)</th>
-                        </tr>
-                    </thead>
-                    <tbody class="fw-normal">
-                        <tr>
-                            <td class="pb-0 text-nowrap" style="color: #0055FF;">S4 SP2/18</td>
-                            <td class="pb-0 text-nowrap">4”</td>
-                            <td class="pb-0 text-nowrap">Three Phase</td>
-                            <td class="pb-0 text-nowrap text-end">220-380</td>
-                            <td class="pb-0 text-nowrap text-center">50</td>
-                            <td class="pb-0 text-nowrap">4 T 1 HP</td>
-                            <td class="pb-0 text-nowrap">4”</td>
-                            <td class="pb-0 text-nowrap">0.75</td>
-                            <td class="pb-0 text-nowrap">0.75</td>
-                            <td class="pb-0 text-nowrap">0.75</td>
-                            <td class="pb-0 text-nowrap">0.75</td>
-                            <td class="pb-0 text-nowrap">0.75</td>
-                        </tr>
-                    </tbody>
-                </table>
-               </div>
             </div>
-        </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
